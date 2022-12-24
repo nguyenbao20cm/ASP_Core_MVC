@@ -1,0 +1,82 @@
+<!-- Main Container -->
+<main id="main-container">
+
+
+
+
+
+    <!-- Hero -->
+    <div class="bg-image" style="background-image: url('/Content/images/banner/code.jpeg');">
+        <div class="bg-black-op">
+            <div class="content">
+                <div class="py-50 mt-20">
+                    <h1 class="h3 text-white font-w700 mb-10">Tài liệu</h1>
+                    <h2 class="h5 text-white-op mb-0 font-w400">Kho tài liệu và bài viết được chia sẻ, đánh giá bởi cộng đồng</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END Hero -->
+
+    <div class="content">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb bg-white mb-30">
+            <a class="breadcrumb-item" href="/"><i class="fas fa-home"></i></a>
+            <a class="breadcrumb-item" href="/documentation">Tài liệu</a>
+            <span class="breadcrumb-item active">Tạo t&#224;i liệu mới</span>
+        </nav>
+        <!-- END Breadcrumb -->
+        <div class="row row-deck">
+            <div class="col-xl-12">
+                <div class="block block-rounded block-fx-shadow">
+                    <div class="block-header block-header-default">
+                        <h3 class="block-title font-w600"><i class="fas fa-pencil-alt fa-fw"></i> Tạo tài liệu mới</h3>
+                    </div>
+                    <div class="block-content pb-20">
+
+
+                        <form action="/documentation/create" id="createDocForm" method="post" role="form">
+                            <input name="__RequestVerificationToken" type="hidden" value="hVVyuAD0mG_h28Un-0Up30awZR8uLJPfrT6GwmHEzeENNTSO6_nvEcSt-s285sFHso1S0pM5gpGF_FDKHAZJNtq25ui8hThX8RXPDjIsC74rjfCPeKD7upcSLBXzJBefXx0jIo5qCV4dXT8wVcjxkg2" /><input data-val="true" data-val-required="The Status field is required." id="Status" name="Status" type="hidden" value="Pending" />
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="Title">Ti&#234;u đề</label>
+                                        <input class="form-control form-control-lg" data-val="true" data-val-maxlength="Tiêu đề không quá 400 ký tự" data-val-maxlength-max="400" data-val-required="Tiêu đề không được để trống" id="Title" name="Title" placeholder="Tên bài viết, tài liệu, chủ đề mà bạn chia sẻ"
+                                               type="text" value="" />
+                                        <span class="field-validation-valid text-danger" data-valmsg-for="Title" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="Body">Nội dung</label>
+                                        <textarea class="form-control form-control-lg ckeditor" cols="4" data-val="true" data-val-required="Nội dung không được để trống" id="Body" name="Body" placeholder="Nội dung" rows="4">
+</textarea>
+                                        <span class="field-validation-valid text-danger" data-valmsg-for="Body" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="Tags">Thẻ</label>
+                                        <input class="form-control form-control-lg" data-role="tagsinput" data-val="true" data-val-required="Chọn ít nhất 1 thẻ" id="Tags" name="Tags" placeholder="Tag" type="text" value="" />
+                                        <span class="field-validation-valid text-danger" data-valmsg-for="Tags" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="text-right">
+                                        <a href="/documentation" class="btn btn-link">Hủy bỏ</a>
+                                        <button type="button" id="btnDraft" class="btn btn-outline-primary"><i class="fas fa-file-text-o"></i> Lưu bản nháp</button>
+                                        <button type="submit" class="btn btn-primary min-width-100"><i class="fas fa-cloud-upload"></i> GỬI X&#201;T DUYỆT</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</main>
+<!-- END Main Container -->

@@ -1,0 +1,89 @@
+﻿@model Eshop.Models.ProductViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1 class="text-info" style="display:block ;text-align:center;">New Product</h1>
+<form asp-controller="HomeAdmin" asp-action="CreateProduct" method="post" role="form">
+    <hr />
+    <div asp-validation-summary="All" class="text-danger" ></div>
+
+    <div class="form-group">
+        <label asp-for="SKU" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="SKU" class="form-control" placeholder="SKU" />
+            <span asp-validation-for="SKU" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Name" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="Name" class="form-control" placeholder="Name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="Description" class="form-control" placeholder="Description" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+    </div>
+     <div class="form-group">
+        <label asp-for="Price" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="Price" class="form-control" placeholder="Price" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Stock" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="Stock" class="form-control" placeholder="Stock" />
+            <span asp-validation-for="Stock" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ProductTypeId" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="ProductTypeId" class="form-control" placeholder="ProductTypeId" />
+            <span asp-validation-for="ProductTypeId" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ProductType" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="ProductType" class="form-control" placeholder="ProductType" />
+            <span asp-validation-for="ProductType" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ImageFile" class="control-label"></label>
+        <input asp-for="ImageFile" class="form-control" />
+        <span asp-validation-for="ImageFile" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Status" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="Status" class="form-control" placeholder="FullName" />
+            <span asp-validation-for="Status" class="text-danger"></span>
+        </div>
+    </div>
+  
+   
+    <div class="form-group">
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-success form-control">Create</button>
+        </div>
+    </div>
+</form>
+
+
+

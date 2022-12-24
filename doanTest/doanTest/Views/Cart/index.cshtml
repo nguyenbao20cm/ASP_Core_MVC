@@ -1,0 +1,84 @@
+﻿@model List<Eshop.Models.Cart>
+@{
+    Layout = "Cart";
+}
+<div class="col-md-8">
+    <div class="product-content-right">
+        <div class="woocommerce">
+            <form method="post" action="#">
+                <table cellspacing="0" class="shop_table cart">
+                    <thead>
+                        <tr>
+                            <th class="product-remove">Delete</th>
+                            <th class="product-remove">Add</th>
+                            <th class="product-thumbnail">Image</th>
+                            <th class="product-name">Product</th>
+                            <th class="product-price">Price</th>
+                            <th class="product-quantity">Quantity</th>
+<th class="product-quantity">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr class="cart_item">
+                                <td class="product-remove">
+                                
+                                    <a title="Remove this item" class="remove" asp-action="delete" asp-controller="Cart" asp-route-id="@ViewBag.id" asp-route-proid="@item.ProductId">-</a>
+                                </td>
+                                <td class="product-remove">
+                                
+                                    <a title="Remove this item" class="remove" asp-action="Add" asp-controller="Cart" asp-route-id="@ViewBag.id" asp-route-proid="@item.ProductId">+</a>
+                                </td>
+
+                                <td class="product-thumbnail">
+                                    <a href="single-product.html"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="~/img/product/@item.Product.Image"></a>
+                                </td>
+
+                                <td class="product-name">
+                                    <a href="single-product.html">Ship Your Idea</a>
+                                </td>
+
+                                <td class="product-price">
+                                    <span class="amount">@item.Product.Price.ToString("#,##0")</span>
+                                </td>
+                                <td class="product-price">
+                                    <span class="amount">@item.Quantity</span>
+                                </td>
+                                <td class="product-price">
+                                    <span class="amount">@((item.Product.Price * item.Quantity).ToString("#,##0"))</span>
+                                </td>
+
+                                
+                            </tr>
+                        }
+                   
+                        <tr>
+                          
+                                <td style="font-size: 150%;">
+
+                                    <a asp-action="ThanhToan" asp-controller="Cart" asp-route-id="@ViewBag.id">
+                                        Checkout
+                                    </a>
+                                </td>
+                            
+                           
+                            <td style="font-size: 150%;">
+
+                                <a asp-action="DeleteAll" asp-controller="Cart" asp-route-id="@ViewBag.id">
+                                    Delete All
+                                </a>
+                            </td>
+                        </tr>
+                        <h1>Total</h1>
+                        <h4 class="product-subtotal">
+                            <span class="amount">@Model.Sum(c=>c.Product.Price* c.Quantity).ToString("#,##0")</span>
+                        </h4>
+                    </tbody>
+                </table>
+            </form>
+
+         
+        </div>
+    </div>
+</div>

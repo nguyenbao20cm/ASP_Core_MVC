@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Eshop.Models.Product>
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*
+*@
+@foreach (var item in @ViewBag.a) {
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li class="active"><a asp-route-id="@item.Id" asp-controller="Products" asp-action="load">@item.Name</a></li>
+
+        </ul>
+    </div>
+}
+<div>
+    <form asp-action="Search" asp-controller="Products">
+        <label>Tên: </label>
+        <input name="name" /><br />
+        <button>Tìm kiếm</button>
+    </form>
+</div>
+
+
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+          
+            @foreach (var item in Model) 
+            {
+
+            <div class="col-md-3 col-sm-6">
+                <div class="single-shop-product">
+                    <div class="product-upper">
+                            <img src="img/product/@item.Image" alt="">
+                    </div>
+                        <h2><a asp-route-id="@item.Id" asp-action="Details" asp-controller="Products">@item.Name</a></h2>
+                    <div class="product-carousel-price">
+                        <ins>@item.Price</ins>
+                    </div>
+
+                    <div class="product-option-shop">
+                        <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow"asp-action="Them"asp-controller="Cart" asp-route-id="@item.Id">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-pagination text-center">
+                    <nav>
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
